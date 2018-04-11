@@ -12,7 +12,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Alien.fxml"));
+			FXMLLoader loader = new FXMLLoader (getClass().getResource("Alien.fxml")); // associa l'interfaccia creata al nodo root di borderpain
+			BorderPane root = (BorderPane)loader.load();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
